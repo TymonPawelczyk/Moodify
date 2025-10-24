@@ -28,7 +28,7 @@ onMounted(() => {
             placeholder="How are you feeling today? Tell me more..."
             rows="4"
             @keydown.enter.exact.prevent="
-              isLoggedIn && userInput.trim() && (console.log('send:', userInput), (userInput = ''))
+              isLoggedIn && userInput.trim()
             "
           />
           <button
@@ -36,7 +36,7 @@ onMounted(() => {
             :disabled="!isLoggedIn || !userInput.trim()"
             class="px-4 py-2 rounded-xl text-neutral-50 bg-green-500 hover:bg-green-600 disabled:bg-neutral-700 disabled:text-neutral-400 transition-colors duration-300"
             @click="
-              isLoggedIn && userInput.trim() && (console.log('send:', userInput), (userInput = ''))
+              isLoggedIn && userInput.trim() && (console.log('Send request:', userInput), (userInput = ''))
             "
             title="Send"
           >
