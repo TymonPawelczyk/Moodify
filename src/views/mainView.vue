@@ -11,11 +11,7 @@ const sendPrompt = async () => {
   if (!payload) return
   try {
     console.log('Send request:', payload)
-    await axios.post(`http://127.0.0.1:8000/prompt/${payload}`, payload, {
-      // headers: {
-      //   'Access-Control-Allow-Origin': 'POST',
-      // },
-    })
+    await axios.post(`http://127.0.0.1:8000/prompt/${payload}`, payload, {})
     userInput.value = ''
   } catch (err) {
     console.error('Failed to send request:', err)
