@@ -60,6 +60,9 @@ onMounted(() => {
           Press Enter to send • Shift+Enter for newline
         </div>
       </div>
+      <div class="mt-6 text-xl font-bold">
+      Moodify suggests today:
+      </div>
       <iframe
         style="border-radius: 12px ; margin-top: 20px;"
         src="https://open.spotify.com/embed/track/3eE2OyYKMf3YIFS1e74ulg?utm_source=generator"
