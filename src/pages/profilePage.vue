@@ -6,8 +6,7 @@ type SpotifyUser = {
   id: string
   display_name: string | null
   email?: string
-  images?: Array<{ url: string }>
-  [key: string]: unknown
+  images?: Array<{ url: string, height: number | null, width: number | null }>
 }
 
 const userProfile = ref<SpotifyUser | null>(null)
@@ -65,7 +64,14 @@ onMounted(() => {
       <h2 class="text-xl font-bold mt-4">Your Profile</h2>
       <p class="text-md">Name: {{ userProfile.display_name }}</p>
       <p class="text-md">Email: {{ userProfile.email }}</p>
-      <!-- <p class="text-md">Picture: {{ userProfile.images[0].url }}</p> -->
+      <!-- <span>
+        <img
+          v-if="userProfile.images && userProfile.images.length > 0"
+          :src="userProfile.images[0].url"
+          alt="Profile Picture"
+          class="w-32 h-32 rounded-full mt-4"
+        />
+      </span> -->
     </div>
   </div>
 </template>
