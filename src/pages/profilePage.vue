@@ -48,6 +48,7 @@ onMounted(() => {
   const accessToken = window.localStorage.getItem('access_token')
   if (accessToken) {
     isLoggedIn.value = true
+    fetchSpotifyProfile()
   }
 })
 </script>
