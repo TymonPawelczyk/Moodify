@@ -54,6 +54,19 @@ onMounted(() => {
 </script>
 <template>
   <menu-component />
-  <h1 class="">Display your Spotify profile data</h1>
+  <div class="flex p-6 bg-neutral-900 min-h-screen text-white justify-start items-center flex-col">
+    <h1 class="text-2xl font-bold mb-4">Profile Page</h1>
+    <div v-if="isLoggedIn">
+      <p class="text-green-500">Welcome back!</p>
+    </div>
+    <div v-if="userProfileLoading">Loading...</div>
+    <div v-if="userProfileError" class="text-red-500">{{ userProfileError }}</div>
+    <div v-if="userProfile">
+      <h2 class="text-xl font-bold mt-4">Your Profile</h2>
+      <p class="text-md">Name: {{ userProfile.display_name }}</p>
+      <p class="text-md">Email: {{ userProfile.email }}</p>
+      <!-- <p class="text-md">Picture: {{ userProfile.images[0].url }}</p> -->
+    </div>
+  </div>
 </template>
 <style scoped></style>
